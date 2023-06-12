@@ -45,6 +45,7 @@ module.exports = {
             const isPasswordValid = await bcrypt.compare(password,myUser.password);
             if(isPasswordValid){
                 const token = jwt.sign({id: myUser.id,email:myUser.email}, keys.secretOrKey, {});
+                console.log(myUser)
                 const data = {
                     id:`${myUser.id}` ,
                     name: myUser.name,

@@ -35,7 +35,6 @@ User.findByEmail = (email, result) => {
         email = ?
 	GROUP BY
 		u.id
-
     `;
 
     db.query(
