@@ -6,35 +6,35 @@ const User = {};
 User.findByEmail = (email, result) => {
     const sql = `
     SELECT
-        u.id,
-        u.email,
-        u.name,
-        u.lastname,
-        u.phone,
-        u.image,
-        u.password,
-		json_arrayagg(
-			json_object(
-				'id', CONVERT(r.id, char),
-				'name', r.name,
-				'image', r.image,
-				'route', r.route
+        U.id,
+        U.email,
+        U.name,
+        U.lastname,
+        U.image,
+        U.phone,
+        U.password,
+        JSON_ARRAYAGG(
+            JSON_OBJECT(
+                'id', CONVERT(R.id, char),
+                'name', R.name,
+                'image', R.image,
+                'route', R.route
             )
-        ) as roles
+        ) AS roles
     FROM
-        users as u
-	INNER JOIN
-		user_has_roles as uhr
-	ON
-		uhr.id_user = u.id
-	INNER JOIN
-		roles as r
-	ON
-		uhr.id_rol = r.id
+        users AS U
+    INNER JOIN
+        user_has_roles AS UHR
+    ON
+        UHR.id_user = U.id
+    INNER JOIN
+        roles AS R
+    ON
+        UHR.id_rol = R.id
     WHERE
         email = ?
-	GROUP BY
-		u.id
+    GROUP BY
+        U.id
     `;
 
     db.query(
