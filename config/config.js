@@ -8,10 +8,11 @@ const mysql = require('mysql');
 }); */
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'delivery_elias_root',
-    password: 'r#s1D4geOTKg',
-    database: 'delivery_elias_udemy'
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'delivery_elias_root',
+    password: process.env.DB_PASSWORD || 'r#s1D4geOTKg',
+    database: process.env.DB_NAME || 'delivery_elias_udemy',
+    port: process.env.DB_PORT || 3306
 });
 
 db.connect(function(err){
@@ -19,4 +20,5 @@ db.connect(function(err){
     console.log('DATABASE CONNECTED!');
 });
 
-module.exports = db;
+
+module.exports = db

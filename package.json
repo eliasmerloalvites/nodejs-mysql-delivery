@@ -4,7 +4,9 @@
   "description": "Backend de la aplicacion delivery",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "nodemon server.js"
   },
   "keywords": [
     "flutter",
@@ -29,5 +31,8 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "socket.io": "^2.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
