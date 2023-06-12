@@ -54,7 +54,7 @@ module.exports = {
                     phone: myUser.phone,
                     image: myUser.image,
                     session_token:`JWT ${token}`,
-                    roles: JSON.stringify(myUser.roles)
+                    roles: JSON.parse(JSON.stringify(myUser.roles))
                 }
                 return res.status(201).json({
                     success: true,
