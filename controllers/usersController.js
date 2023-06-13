@@ -96,10 +96,13 @@ module.exports = {
         console.log("entro register")
         const user = JSON.parse(JSON.stringify(req.body.user)) ; // Capturo los datos que me envie el cliente
         
+        console.log(user)
         const files = req.files;
         if(files.length >0){
             const path = `image_${Date.now()}`;
             const url = await storage(files[0], path);
+            console.log("url")
+            console.log(url)
 
             if(url != undefined && url != null){
                 user.image = url
