@@ -105,6 +105,7 @@ module.exports = {
             console.log(url)
 
             if(url != undefined && url != null){
+                console.log("entro")
                 user.image = url
             }
         }
