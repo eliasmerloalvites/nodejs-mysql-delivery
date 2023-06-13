@@ -169,7 +169,7 @@ User.findAdmins = (result) => {
 }
 
 User.create = async (user, result) => {
-    console.log(user.password)
+    console.log(user)
     const hash = await bcrypt.hash(user.password, 10);
 
     const sql = `
