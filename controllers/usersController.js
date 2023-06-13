@@ -94,7 +94,7 @@ module.exports = {
 
     async registerWiithImage(req,res){
         console.log("entro register")
-        const user = JSON.parse(JSON.stringify(req.body.user)) ; // Capturo los datos que me envie el cliente
+        let user = JSON.parse(JSON.stringify(req.body.user)) ; // Capturo los datos que me envie el cliente
         
         console.log(user)
         const files = req.files;
