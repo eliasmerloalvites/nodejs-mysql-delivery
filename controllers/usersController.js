@@ -95,7 +95,7 @@ module.exports = {
     async registerWiithImage(req,res){
         console.log("entro register")
         const user = JSON.parse(JSON.stringify(req.body.user)) ; // Capturo los datos que me envie el cliente
-        console.log(user)
+        
         const files = req.files;
         if(files.length >0){
             const path = `image_${Date.now()}`;
@@ -105,9 +105,14 @@ module.exports = {
                 user.image = url
             }
         }
-
+        console.log(user)
 
         User.create(user,(err,data) => {
+            console.log("err")
+            console.log(err)
+            console.log("data")
+            console.log(data)
+
             if(err){
                 return res.status(501).json({
                     success: false,
