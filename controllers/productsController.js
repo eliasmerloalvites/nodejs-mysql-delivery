@@ -16,6 +16,10 @@ module.exports = {
                 })
             }
 
+            data.forEach((row) => {
+                row.price = parseFloat(row.price);
+            });
+
             return res.status(201).json(data)
         })
     },
@@ -32,7 +36,9 @@ module.exports = {
                     error: err
                 });
             }
-
+            data.forEach((row) => {
+                row.price = parseFloat(row.price);
+            });
             return res.status(201).json(data);
         });
     },
