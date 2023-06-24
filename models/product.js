@@ -8,7 +8,7 @@ Product.findByCategory = (id_category,result) => {
         CONVERT(p.id, char) as id,
         p.name,
         p.description,
-        CAST(P.price AS DECIMAL(10, 2)) AS price,
+        CAST(p.price AS DECIMAL(10, 2)) AS price,
         p.image1,
         p.image2,
         p.image3,
