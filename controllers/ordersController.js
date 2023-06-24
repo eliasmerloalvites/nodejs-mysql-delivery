@@ -19,10 +19,10 @@ module.exports = {
             }
 
             for (const d of data) {
-                d.address = JSON.parse(d.address);
-                d.client = JSON.parse(d.client);
-                d.delivery = JSON.parse(d.delivery);
-                d.products = JSON.parse(d.products);
+                d.address = JSON.parse(JSON.stringify(d.address));
+                d.client = JSON.parse(JSON.stringify(d.client));
+                d.delivery = JSON.parse(JSON.stringify(d.delivery));
+                d.products = JSON.parse(JSON.stringify(d.products));
             }
             
             
@@ -45,10 +45,10 @@ module.exports = {
             }
 
             for (const d of data) {
-                d.address = JSON.parse(d.address);
-                d.client = JSON.parse(d.client);
-                d.delivery = JSON.parse(d.delivery);
-                d.products = JSON.parse(d.products);
+                d.address = JSON.parse(JSON.stringify(d.address));
+                d.client = JSON.parse(JSON.stringify(d.client));
+                d.delivery = JSON.parse(JSON.stringify(d.delivery));
+                d.products = JSON.parse(JSON.stringify(d.products));
             }
             
             
