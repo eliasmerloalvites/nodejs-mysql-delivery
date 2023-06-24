@@ -184,7 +184,7 @@ module.exports = {
                 }
     
                 myData.session_token = user.session_token
-                myData.roles = JSON.parseJSON.stringify((myData.roles))
+                myData.roles = JSON.parse(JSON.stringify(myData.roles))
                 return res.status(201).json({
                     success: true,
                     message: 'El usuario se actualizo correctamente',
